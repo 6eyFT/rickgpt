@@ -1,26 +1,43 @@
-# Rick Discord Bot
+# RickGPT Discord Bot
 
-A Discord bot that generates random Rick quotes and responds to the last message in the channel as Rick Sanchez, using the OpenAI API.
+RickGPT is a discord bot that brings the unique personality of Rick Sanchez (from Rick and Morty) to your discord server, using OpenAI's GPT-3 model.
 
 ## Features
 
-- Generates a random Rick quote.
-- Responds to the last message in the channel as Rick Sanchez, using OpenAI's GPT-3.
+1. `/rick`: Generates a random Rick Sanchez quote.
+2. `/rickrespond`: Responds to the last message in the channel as Rick Sanchez.
+3. `/rickopinion`: Asks Rick Sanchez for his opinion on a specific topic.
 
-## Installation
+## Setup
 
-1. Clone this repository: `git clone https://github.com/yourusername/rick-discord-bot.git`
-2. Install the dependencies: `pip install -r requirements.txt`
-3. Set your Discord bot token and OpenAI API key as environment variables:
-    - For Unix-based systems: `export DISCORD_TOKEN="your-token-here"` and `export OPENAI_KEY="your-api-key-here"`
-    - For Windows: `set DISCORD_TOKEN=your-token-here` and `set OPENAI_KEY=your-api-key-here`
-4. Run the bot: `python3 bot.py` (replace `bot.py` with the name of your Python script)
+### Setting Up Your Discord Bot
 
-## Usage
+1. Follow the instructions [here](https://discord.com/developers/docs/getting-started) to create a new bot on the Discord developer portal.
 
-- Use `/rick` to generate a random Rick quote.
-- Use `/rickrespond` to have the bot respond to the last message in the channel as Rick Sanchez.
+2. Once your bot is created, copy the bot token. This will be used to run your bot.
+
+### Deploying to DigitalOcean
+
+1. Create a new droplet (if you haven't done so already) and SSH into it.
+
+2. Clone your GitHub repository into the droplet.
+
+3. Install Python, pip, and any necessary dependencies (you can use the `requirements.txt` file for this).
+
+4. Set your environment variables (`TOKEN` and `APIKEY`) using the bot token and the OpenAI API key.
+
+5. Run your bot using the command `python3 bot.py` (replace `bot.py` with the name of your python file).
+
+### Making Your Bot Persistent
+
+1. Install `tmux` using the command `sudo apt-get install tmux`.
+
+2. Start a new `tmux` session using the command `tmux new -s bot`.
+
+3. Run your bot inside the `tmux` session.
+
+4. Detach from the `tmux` session using the shortcut `Ctrl+b` followed by `d`. Your bot will continue to run even after you disconnect from the server.
 
 ## License
 
-This project is licensed under the terms of the MIT License.
+RickGPT is licensed under the MIT License. See `LICENSE` for more information.
