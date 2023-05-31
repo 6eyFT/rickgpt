@@ -4,9 +4,9 @@ RickGPT is a discord bot that brings the unique personality of Rick Sanchez (fro
 
 ## Features
 
-1. `/rick`: Generates a random Rick Sanchez quote.
-2. `/rickrespond`: Responds to the last message in the channel as Rick Sanchez.
-3. `/rickopinion`: Asks Rick Sanchez for his opinion on a specific topic.
+1. `/rickquote`: Generates a random Rick Sanchez quote.
+2. `/rickrespond`: Responds to the last message in the channel as a drunk Rick Sanchez.
+3. `/rick`: Asks a drunk Rick Sanchez for his opinion on a specific topic.
 
 ## Setup
 
