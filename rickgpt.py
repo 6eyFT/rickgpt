@@ -4,8 +4,8 @@ import random
 import openai
 import os
 
-TOKEN = os.getenv("DISCORD_TOKEN")
-APIKEY = os.getenv("OPENAI_KEY")
+TOKEN = os.getenv("TOKEN")
+APIKEY = os.getenv("APIKEY")
 
 intents = discord.Intents.default()
 intents.typing = False
