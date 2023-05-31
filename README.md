@@ -4,9 +4,9 @@ RickGPT is a discord bot that brings the unique personality of Rick Sanchez (fro
 
 ## Features
 
-1. `/rickquote`: Generates a random Rick Sanchez quote.
-2. `/rickrespond`: Responds to the last message in the channel as a drunk Rick Sanchez.
-3. `/rick`: Asks a drunk Rick Sanchez for his opinion on a specific topic.
+1. `/rick`: Asks a drunk Rick Sanchez for his opinion on a specific topic.
+2. `/rickquote`: Generates a random Rick Sanchez quote.
+3. `/rickrespond`: Responds to the last message in the channel as a drunk Rick Sanchez.
 
 ## Setup
 
@@ -15,6 +15,12 @@ RickGPT is a discord bot that brings the unique personality of Rick Sanchez (fro
 1. Follow the instructions [here](https://discord.com/developers/docs/getting-started) to create a new bot on the Discord developer portal.
 
 2. Once your bot is created, copy the bot token. This will be used to run your bot.
+
+### Getting Your OpenAI API Key
+
+1. Sign up for an API key at [OpenAI](https://openai.com/blog/openai-api).
+
+2. Once you're approved, you'll be able to find your API key in the OpenAI dashboard.
 
 ### Deploying to DigitalOcean
 
