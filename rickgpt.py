@@ -26,7 +26,7 @@ def generate_rick_quote():
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="to Snake Jazz"))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Snake Jazz"))
     print(f"Logged in as {bot.user.name} ({bot.user.id})")
     try:
         synced = await bot.tree.sync()
