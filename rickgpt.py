@@ -56,6 +56,9 @@ async def rick_respond(interaction: discord.Interaction):
     messages.reverse()
     # Get the second-to-last message (the one before the command)
     last_message = messages[1].content if len(messages) > 1 else "I have nothing to say."
+    # Add a period to the end of the message if it doesn't end with a punctuation mark
+    if last_message[-1] not in {'.', '!', '?'}:
+        last_message += '.'
     # Add the instructions to the prompt
     prompt = f"You are now Rick Sanchez. You talk exactly using his tone and mannerisms. Respond to the text after this sentence as Rick Sanchez. {last_message}"
     # Use GPT3 to generate a response
