@@ -42,7 +42,7 @@ async def rick(interaction: discord.Interaction):
     await interaction.response.send_message(generate_rick_quote())
 
 @bot.tree.command(
-    name="rickresponse",
+    name="whatwouldricksay",
     description="Responds to the last message in the channel as Rick Sanchez."
 )
 async def rick_respond(interaction: discord.Interaction):
@@ -57,7 +57,7 @@ async def rick_respond(interaction: discord.Interaction):
     # Get the second-to-last message (the one before the command)
     last_message = messages[1].content if len(messages) > 1 else "I have nothing to say."
     # Add the instructions to the prompt
-    prompt = f"You are now a drunk, angry Rick Sanchez. You talk exactly using his tone and mannerisms. Respond to the text after this sentence as drunk angry Rick Sanchez. {last_message}"
+    prompt = f"You are now Rick Sanchez. You talk exactly using his tone and mannerisms. Respond to the text after this sentence as Rick Sanchez. {last_message}"
     # Use GPT3 to generate a response
     response = openai.Completion.create(
         engine="text-davinci-002",
@@ -74,6 +74,24 @@ async def rick_respond(interaction: discord.Interaction):
     description="Asks Rick Sanchez for his opinion."
 )
 async def rick_opinion(interaction: discord.Interaction, topic: str):
+    # Add the instructions to the prompt
+    prompt = f"You are now Rick Sanchez. You talk exactly using his tone and mannerisms. Respond to the text after this sentence as Rick Sanchez. {topic}:"
+    # Use GPT-3 to generate a response
+    response = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=prompt,
+        temperature=1,
+        max_tokens=600
+    )
+    # Replace "morty" with the interaction user's name in the response
+    response_text = response['choices'][0]['text'].strip().replace("Morty", interaction.user.name)
+    await interaction.response.send_message(response_text)
+    
+@bot.tree.command(
+    name="drunkrick",
+    description="Asks a drunk Rick Sanchez for his opinion."
+)
+async def drunk_rick(interaction: discord.Interaction, topic: str):
     # Add the instructions to the prompt
     prompt = f"You are now a drunk, angry Rick Sanchez. You talk exactly using his tone and mannerisms. Respond to the text after this sentence as drunk angry Rick Sanchez. {topic}:"
     # Use GPT-3 to generate a response
