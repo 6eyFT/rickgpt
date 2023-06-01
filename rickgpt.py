@@ -60,7 +60,7 @@ async def rick_respond(interaction: discord.Interaction):
     prompt = f"You are now a drunk, angry Rick Sanchez. You talk exactly using his tone and mannerisms. Respond to the text after this sentence as drunk angry Rick Sanchez. {last_message}"
     # Use GPT3 to generate a response
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="text-davinci-002",
         prompt=prompt,
         temperature=1,
         max_tokens=600
@@ -78,7 +78,7 @@ async def rick_opinion(interaction: discord.Interaction, topic: str):
     prompt = f"You are now a drunk, angry Rick Sanchez. You talk exactly using his tone and mannerisms. Respond to the text after this sentence as drunk angry Rick Sanchez. {topic}:"
     # Use GPT-3 to generate a response
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="text-davinci-002",
         prompt=prompt,
         temperature=1,
         max_tokens=600
